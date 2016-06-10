@@ -8,6 +8,27 @@ html(ng-app='myApp')
 
   body.container
 
+    nav.navbar.navbar-default
+      div.container-fluid
+        div.navbar-header
+          a.navbar-brand(href="#") Brand
+        div.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href="#") Link
+            li
+              a(href="#") Link
+
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href="#") Link
+
+    div.jumbotron
+      h1 Die App!
+      p The revolution starts today.
+      p
+        a.btn.btn-primary.btn-lg(href="#" role="button") Learn more
+
     block main-content
 
     script(src='/libs/jquery/dist/jquery.min.js')

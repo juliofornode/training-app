@@ -1,15 +1,27 @@
 extend layout
 
 block main-content
+  div.row
+    div.col-md-4
+      div.panel.panel-default
+        div.panel-heading
+          h3.panel-title Panel title
+        div.panel-body
+          p=courses[0].title
 
-  h3 Die App
-  br
-  div.panel.panel-default
-    div.panel-heading
-      h3.panel-title Die Mission
-    div.panel-body Global Domination!
+    div.col-md-4
+      div.panel.panel-default
+        div.panel-heading
+          h3.panel-title Panel title
+        div.panel-body
+          p=courses[0].title
+
+    div.col-md-4
+      div.panel.panel-default
+        div.panel-heading
+          h3.panel-title Panel title
+        div.panel-body
+          p=courses[0].title
+
 
   div(ng-view)
-  br
-  h4 List of courses
-  p=courses[0].title
