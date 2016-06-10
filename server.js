@@ -7,8 +7,11 @@ var stylus = require('express-stylus');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+
 //db settings and connection
-mongoose.connect('mongodb://localhost/training-app');
+
+//mongoose.connect('mongodb://localhost/training-app');
+mongoose.connect('mongodb://julio:facil@ds011664.mlab.com:11664/training-app');
 
 var db = mongoose.connection;
 
@@ -23,15 +26,16 @@ db.on('error', function() {
 var Course = require('./server/models/courses.js');
 
 
-
 //app instantiation
 var app = express();
 
 
 //app configuration: app.set()
-var env = process.env.ENV || '3000';
 app.set('views', path.join(__dirname, 'server/views'));
 app.set('view engine', 'jade');
+app.set('port', process.env.PORT || 3000);
+var port = app.get('port');
+
 
 //middleware definition: app.use()
 app.use(logger('dev'));
@@ -42,7 +46,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(stylus({
     src: __dirname + '/client'
 }));
-
 
 
 //routes definition
@@ -63,9 +66,7 @@ app.get('*', function(req, res) {
 });
 
 
-
 //start app server with host and port
-var port = 3000;
 app.listen(port, function(){
     console.log('the server is listening on port ' + port);
 });
