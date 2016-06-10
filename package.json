@@ -10,9 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "express": "^4.13.4",
+    "express-stylus": "^0.1.0",
     "jade": "^1.11.0",
+    "mongoose": "^4.4.20",
     "morgan": "^1.7.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0",
+    "stylus": "^0.54.5"
   }
 }
