@@ -1,6 +1,7 @@
 doctype
 html(ng-app='myApp')
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(href='/libs/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
     link(href='/libs/toastr/toastr.css', rel='stylesheet')
     link(href='/css/style.css', rel='stylesheet')
@@ -25,8 +26,15 @@ html(ng-app='myApp')
               a(href="#") Teachers
 
           ul.nav.navbar-nav.navbar-right
-            li
-              a(href="#") Enroll
+            if (!user)
+              li
+                a(href="/login") Login
+              li
+                a(href="/register") Register
+            if (user)
+              li
+                a(href="/logout") Logout, #{user.username}
+
 
     div.jumbotron
       h1 Die App!
