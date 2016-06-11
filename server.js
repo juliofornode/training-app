@@ -10,8 +10,8 @@ var mongoose = require('mongoose');
 
 //db settings and connection
 
-//mongoose.connect('mongodb://localhost/training-app');
-mongoose.connect('mongodb://julio:facil@ds011664.mlab.com:11664/training-app');
+mongoose.connect('mongodb://localhost/training-app');
+//mongoose.connect('mongodb://julio:facil@ds011664.mlab.com:11664/training-app');
 
 var db = mongoose.connection;
 
